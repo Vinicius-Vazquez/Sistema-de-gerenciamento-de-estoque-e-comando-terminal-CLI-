@@ -10,7 +10,7 @@ class Produto:
         return self.quantidade * self.preco
 
     def __str__(self):
-        return f"[{self.id,}] {self.nome} - Qtd: {self.quantidade} | R${self.preco:.2f}"
+        return f"[{self.id}] {self.nome} - Qtd: {self.quantidade} | R${self.preco:.2f}"
 
 
 # Área deteste inicial
@@ -24,4 +24,4 @@ if __name__ == "__main__":
     print(p2)
 
     valor_p1 = p1.calcular_valor_total()
-    print(f"Valor total investido em {p1.nome}: R$ {valor_p1:.2f}")
+    print(f"Valor total investido em {p1.nome}: R$ {valor_p1:.2f}") 
