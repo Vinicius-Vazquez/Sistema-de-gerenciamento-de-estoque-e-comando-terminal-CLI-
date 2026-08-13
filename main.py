@@ -13,15 +13,35 @@ class Produto:
         return f"[{self.id}] {self.nome} - Qtd: {self.quantidade} | R${self.preco:.2f}"
 
 
+class Estoque:
+
+    def __init__(self):
+        self.produtos = []
+
+    def adicionar_produto(self, produto):
+        self.produtos.append(produto)
+        print(f"-> Produto '{produto.nome}' adicionado com sucesso!")
+
+    def listar_produtos(self):
+        print("\n\t\t\t== RELATÓRIO DE ESTOQUE ==")
+        if not self.produtos:
+            return print("Estoque vázio!")
+
+        for p in self.produtos:
+            print(p)
+
+
+
 # Área deteste inicial
 if __name__ == "__main__":
     print("\t\t\t===TESTANDO A CLASSE PRODUTO==")
 
-    p1 = Produto(1, "Coca-Cola", 3000, 5.00)
-    p2 = Produto(2, "Arroz", 300, 30.00)
+    meu_estoque = Estoque()
 
-    print(p1)
-    print(p2)
+    p1 = Produto(1, "Coca-Cola", 0, 5.00)
+    p2 = Produto(2, "Arroz", 0, 30.00)
 
-    valor_p1 = p1.calcular_valor_total()
-    print(f"Valor total investido em {p1.nome}: R$ {valor_p1:.2f}") 
+    meu_estoque.adicionar_produto(p1)
+    meu_estoque.adicionar_produto(p2)
+
+    meu_estoque.listar_produtos()
